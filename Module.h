@@ -16,6 +16,9 @@ public:
 	}
 
 	// TODO 3: Create a new method "Start()" that should be calling all modules just before the first frame
+	virtual main_states start() {
+		return MAIN_START;
+	}
 
 	virtual update_status Update()
 	{
