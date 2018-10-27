@@ -41,6 +41,9 @@ update_status ModuleRender::Update()
 	SDL_RenderClear(renderer);
 
 	// TODO 5: Now that we have PreUpdate/PostUpdate/Update move things around so we can render :)
+	App->PreUpdate();
+	App->Update();
+	App->PostUpdate();
 
 	SDL_RenderPresent(renderer);
 	return UPDATE_CONTINUE;

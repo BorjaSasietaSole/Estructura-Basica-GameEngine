@@ -37,6 +37,11 @@ bool Application::Init()
 
 // TODO 4: We need to have three updates, add them: PreUpdate Update PostUpdate
 
+update_status Application::PreUpdate()
+{
+	
+}
+
 update_status Application::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
@@ -45,6 +50,11 @@ update_status Application::Update()
 		ret = (*it)->Update();
 
 	return ret;
+}
+
+update_status Application::PostUpdate()
+{
+	
 }
 
 bool Application::CleanUp()
