@@ -31,13 +31,17 @@ update_status ModuleInput::Update()
 {
 	SDL_PumpEvents();
 
+	update_status ret = UPDATE_CONTINUE;
+
 	keyboard = SDL_GetKeyboardState(NULL);
 
 	// TODO 1: Make the application properly close when ESC is pressed (do not use exit())
-
+	if (keyboard[SDL_SCANCODE_ESCAPE]) {
+		ret = UPDATE_STOP;
+	}
 	// Homework: Make the application close up when pressing “X” button of the window
 
-	return UPDATE_CONTINUE;
+	return ret;
 }
 
 // Called before quitting
