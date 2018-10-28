@@ -34,9 +34,10 @@ bool ModuleWindow::Init()
 
 		if (FULLSCREEN == true)
 		{
-			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+			flags |= SDL_WINDOW_FULLSCREEN;
 			flags |= SDL_WINDOW_BORDERLESS;
 			flags |= SDL_WINDOW_RESIZABLE;
+			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 		}
 		
 		window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);

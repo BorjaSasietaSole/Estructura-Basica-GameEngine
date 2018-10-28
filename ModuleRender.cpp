@@ -36,15 +36,21 @@ bool ModuleRender::Init()
 }
 
 // Called every draw update
-update_status ModuleRender::Update()
+
+// TODO 5: Now that we have PreUpdate/PostUpdate/Update move things around so we can render :)
+update_status ModuleRender::PreUpdate()
 {
 	SDL_RenderClear(renderer);
+	return UPDATE_CONTINUE;
+}
 
-	// TODO 5: Now that we have PreUpdate/PostUpdate/Update move things around so we can render :)
-	App->PreUpdate();
-	App->Update();
-	App->PostUpdate();
+update_status ModuleRender::Update()
+{
+	return UPDATE_CONTINUE;
+}
 
+update_status ModuleRender::PostUpdate()
+{
 	SDL_RenderPresent(renderer);
 	return UPDATE_CONTINUE;
 }
